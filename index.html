@@ -56,7 +56,21 @@ header .nav-ip .nav-ip-arrow{flex-shrink:0}
 .copy-success-text small{font-size:11px;font-weight:600;color:#fff;letter-spacing:0}
 @keyframes copyPop{from{opacity:.7;transform:translateY(3px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){[data-copy].copy-success{animation:none}}
-</style></head>
+</style><style>
+/* Bambukas.lt: permatomi pagrindinio ekrano mygtukai */
+.hero-copy .actions{gap:13px;align-items:stretch}
+.hero-copy .actions .hero-glass{display:inline-flex;align-items:center;justify-content:flex-start;gap:12px;min-height:62px;padding:12px 17px;border-radius:13px;border:1px solid rgba(255,255,255,.43);background:rgba(255,255,255,.14);color:#fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 8px 24px rgba(0,0,0,.16);text-decoration:none;cursor:pointer;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.hero-copy .actions .hero-glass:hover{transform:translateY(-3px);background:rgba(255,255,255,.22);border-color:rgba(169,255,142,.78);box-shadow:0 9px 28px rgba(84,255,79,.17),inset 0 1px 0 rgba(255,255,255,.23)}
+.hero-copy .actions .hero-glass:focus-visible{outline:3px solid #a6ff8a;outline-offset:3px}
+.hero-copy .actions .glass-icon{display:grid;place-items:center;flex:none;width:35px;height:35px;border-radius:10px;background:rgba(255,255,255,.17);color:#fff;font-size:19px}
+.hero-copy .actions .glass-label{display:flex;flex-direction:column;gap:3px;text-align:left;line-height:1.2}
+.hero-copy .actions .glass-label strong{font-size:13px;font-weight:800;white-space:nowrap;color:#fff}
+.hero-copy .actions .glass-label small{font-size:11px;font-weight:500;color:rgba(255,255,255,.81);white-space:nowrap}
+.hero-copy .actions .glass-arrow{margin-left:2px;font-size:18px;color:#d4ffd1}
+@media(max-width:520px){.hero-copy .actions .hero-glass{width:100%;min-height:58px}.hero-copy .actions .glass-label strong{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.hero-copy .actions .hero-glass{transition:none}}
+</style>
+</head>
 
 <body>
 
@@ -64,7 +78,7 @@ header .nav-ip .nav-ip-arrow{flex-shrink:0}
 
 <main>
 
-<section class="journey" id="pradzia" aria-label="Bambukas.lt įžanga"><div class="stage" id="stage"><div class="forest" aria-hidden="true"></div><div class="darkness" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="hero-content container" id="heroText"><div class="hero-copy"><div class="eyebrow"> » TAVO UNIKALI MINECRAFT PATIRTIS «</div><h1 class="pixel"><span class="hero-title">BAMBUKAS<span class="title-lt">.LT</span></span></h1><p>Ženk į <strong>Bambukas Network</strong> pasaulį, kuriame tavęs laukia įspūdingi nuotykiai, paslaptingi atradimai ir nauji iššūkiai. Kurk, tyrinėk, varžykis ir atrask savo vietą mūsų bendruomenėje.<span class="hero-tagline">Tavo pasaulis. Tavo nuotykis. Tavo istorija.</span></p><div class="actions"><button class="btn btn-primary" data-copy>⧉ Kopijuoti serverio IP</button><a class="btn btn-ghost discord-btn" href="#" onclick="alert('Discord nuoroda bus pridėta netrukus!'); return false;" aria-label="Prisijungti prie Discord"><span aria-hidden="true">◉</span> Prisijungti prie Discord</a></div></div></div><div class="hint" aria-hidden="true">Slink žemyn ir keliauk į mišką <span>↓</span></div></div></section>
+<section class="journey" id="pradzia" aria-label="Bambukas.lt įžanga"><div class="stage" id="stage"><div class="forest" aria-hidden="true"></div><div class="darkness" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="hero-content container" id="heroText"><div class="hero-copy"><div class="eyebrow"> » TAVO UNIKALI MINECRAFT PATIRTIS «</div><h1 class="pixel"><span class="hero-title">BAMBUKAS<span class="title-lt">.LT</span></span></h1><p>Ženk į <strong>Bambukas Network</strong> pasaulį, kuriame tavęs laukia įspūdingi nuotykiai, paslaptingi atradimai ir nauji iššūkiai. Kurk, tyrinėk, varžykis ir atrask savo vietą mūsų bendruomenėje.<span class="hero-tagline">Tavo pasaulis. Tavo nuotykis. Tavo istorija.</span></p><div class="actions"><button class="btn btn-primary hero-glass" data-copy aria-label="Kopijuoti serverio IP"><span class="glass-icon" aria-hidden="true">⧉</span><span class="glass-label"><strong>Kopijuoti serverio IP</strong><small>play.bambukas.net</small></span></button><a class="btn btn-ghost discord-btn hero-glass" href="#" onclick="alert('Discord nuoroda bus pridėta netrukus!'); return false;" aria-label="Prisijungti prie Discord"><span class="glass-icon" aria-hidden="true">◉</span><span class="glass-label"><strong>Prisijungti prie Discord</strong><small>Bambukas bendruomenė</small></span><span class="glass-arrow" aria-hidden="true">↗</span></a></div></div></div><div class="hint" aria-hidden="true">Slink žemyn ir keliauk į mišką <span>↓</span></div></div></section>
 
 <section class="info" id="informacija"><div class="container">
 
