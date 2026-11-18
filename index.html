@@ -46,6 +46,15 @@ header .nav-ip .nav-ip-text{display:flex!important;flex-direction:column!importa
 header .nav-ip .nav-ip-label{display:block!important;font-size:10px!important;line-height:1.1;color:#a9f49a;letter-spacing:.8px}
 header .nav-ip .nav-ip-address{display:block!important;font-size:13px!important;line-height:1.2;color:#fff;letter-spacing:0}
 header .nav-ip .nav-ip-arrow{flex-shrink:0}
+</style><style>
+/* Tvarkingas patvirtinimas nukopijavus IP */
+[data-copy].copy-success{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;min-width:max-content;white-space:nowrap;background:linear-gradient(135deg,#1b492d,#102c20)!important;border:1px solid #91ff6d!important;color:#fff!important;box-shadow:0 0 0 3px rgba(119,255,91,.09),0 10px 26px rgba(0,0,0,.22)!important;animation:copyPop .25s ease-out}
+.copy-success-icon{display:grid;place-items:center;flex-shrink:0;width:29px;height:29px;border-radius:9px;background:#8fff6c;color:#102314;font-size:18px;font-weight:900}
+.copy-success-text{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.15;text-align:left}
+.copy-success-text strong{font-size:12px;font-weight:800;color:#b8ffa1}
+.copy-success-text small{font-size:11px;font-weight:600;color:#fff;letter-spacing:0}
+@keyframes copyPop{from{opacity:.7;transform:translateY(3px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){[data-copy].copy-success{animation:none}}
 </style></head>
 
 <body>
@@ -70,7 +79,7 @@ header .nav-ip .nav-ip-arrow{flex-shrink:0}
 
 <script>
 
-(()=>{'use strict';const journey=document.querySelector('.journey'),stage=document.querySelector('#stage'),hero=document.querySelector('#heroText');let ticking=false;const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));function update(){ticking=false;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const rect=journey.getBoundingClientRect();const travel=Math.max(1,journey.offsetHeight-innerHeight);const p=clamp(-rect.top/travel,0,1);/* Zoom toward bamboo forest depth, slightly right of center */const ease=p*p*(3-2*p);const zoom=1+1.35*ease;const fade=1-clamp((p-.13)/.37,0,1);const shade=.03+.97*clamp((p-.29)/.61,0,1);stage.style.setProperty('--progress',p.toFixed(4));stage.style.setProperty('--zoom',zoom.toFixed(4));stage.style.setProperty('--fade',fade.toFixed(4));stage.style.setProperty('--shade',shade.toFixed(4));hero.style.pointerEvents=fade<.1?'none':'auto'}function schedule(){if(!ticking){ticking=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);update();document.querySelector('#year').textContent=new Date().getFullYear();document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('play.bambukas.net');const old=b.innerHTML;b.textContent='✓ IP nukopijuotas!';setTimeout(()=>b.innerHTML=old,1800)}catch{prompt('Nukopijuok serverio IP:','play.bambukas.net')}}));})();
+(()=>{'use strict';const journey=document.querySelector('.journey'),stage=document.querySelector('#stage'),hero=document.querySelector('#heroText');let ticking=false;const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));function update(){ticking=false;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const rect=journey.getBoundingClientRect();const travel=Math.max(1,journey.offsetHeight-innerHeight);const p=clamp(-rect.top/travel,0,1);/* Zoom toward bamboo forest depth, slightly right of center */const ease=p*p*(3-2*p);const zoom=1+1.35*ease;const fade=1-clamp((p-.13)/.37,0,1);const shade=.03+.97*clamp((p-.29)/.61,0,1);stage.style.setProperty('--progress',p.toFixed(4));stage.style.setProperty('--zoom',zoom.toFixed(4));stage.style.setProperty('--fade',fade.toFixed(4));stage.style.setProperty('--shade',shade.toFixed(4));hero.style.pointerEvents=fade<.1?'none':'auto'}function schedule(){if(!ticking){ticking=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);update();document.querySelector('#year').textContent=new Date().getFullYear();document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('play.bambukas.net');if(b._copyTimer)clearTimeout(b._copyTimer);if(!b.dataset.originalHtml)b.dataset.originalHtml=b.innerHTML;b.classList.add('copy-success');b.innerHTML='<span class="copy-success-icon" aria-hidden="true">✓</span><span class="copy-success-text"><strong>IP nukopijuotas!</strong><small>play.bambukas.net</small></span>';b._copyTimer=setTimeout(()=>{b.innerHTML=b.dataset.originalHtml;b.classList.remove('copy-success');},2200)}catch{prompt('Nukopijuok serverio IP:','play.bambukas.net')}}));})();
 
 </script><script>
 
