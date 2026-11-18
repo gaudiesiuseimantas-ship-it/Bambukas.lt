@@ -1,196 +1,417 @@
 <!doctype html>
 
+
+
 <html lang="lt">
+
+
 
 <head>
 
+
+
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+
 
 <meta name="theme-color" content="#08150d"><meta name="description" content="Bambukas.lt — Minecraft bendruomenė ir nuotykiai bambukų pasaulyje.">
 
+
+
 <title>Bambukas.lt — Atrask savo nuotykį</title>
+
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+
+
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
 
 <style>
 
-:root{--bg:#08150e;--panel:#10241a;--line:#315440;--green:#8cff55;--white:#f5fff1;--muted:#b5cbbb;--progress:0;--zoom:1;--fade:1;--shade:.22}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--white);font-family:Outfit,Arial,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:4px}.container{width:min(1160px,90%);margin:auto}.pixel{font-family:'Press Start 2P',monospace}header{position:fixed;top:0;left:0;right:0;z-index:80;background:#08190fc9;border-bottom:1px solid #a8fda61c;backdrop-filter:blur(16px)}nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand img{width:220px;max-width:36vw;display:block;height:auto}.links{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:800}.links a:hover{color:var(--green)}.links a{transition:color .2s ease,transform .2s ease}.links a:hover{transform:translateY(-1px)}.links .wiki-nav-link{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid rgba(140,255,85,.38);border-radius:8px;background:rgba(140,255,85,.09);color:#baff9b;white-space:nowrap}.links .wiki-nav-link:hover{background:rgba(140,255,85,.19);border-color:var(--green);color:#fff;box-shadow:0 0 18px rgba(140,255,85,.13)}.nav-ip{display:inline-flex;align-items:center;gap:11px;padding:8px 14px 8px 10px;border:1px solid rgba(151,255,115,.65);background:linear-gradient(135deg,rgba(35,85,47,.9),rgba(11,36,24,.96));border-radius:12px;color:#f3fff0;font-weight:800;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 5px 20px rgba(0,0,0,.16);transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}.nav-ip:hover{transform:translateY(-2px);border-color:#9aff71;box-shadow:0 7px 25px rgba(113,255,89,.18),inset 0 1px 0 rgba(255,255,255,.15)}.nav-ip:focus-visible{outline:2px solid #aaff85;outline-offset:3px}.nav-ip-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:rgba(145,255,107,.14);color:#a0ff7b}.nav-ip-icon svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.nav-ip-text{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.15}.nav-ip-label{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#9de58d}.nav-ip-address{font-size:13px;letter-spacing:.1px}.nav-ip-arrow{color:#a4ff80;font-size:17px;margin-left:2px}.journey{height:340vh;position:relative}.stage{height:100vh;position:sticky;top:0;overflow:hidden;isolation:isolate;background:#06140a}.forest{position:absolute;inset:-3%;background:url('minecraft-bg.png') center 49%/cover no-repeat;transform-origin:62% 42%;transform:scale(var(--zoom));will-change:transform;z-index:-4;filter:blur(2px)}.forest::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,16,8,.47),rgba(4,16,8,.13) 56%,rgba(4,16,8,.04)),linear-gradient(0deg,rgba(4,14,8,.50),transparent 45%)}.darkness{position:absolute;inset:0;z-index:-2;background:#05110b;opacity:var(--shade);pointer-events:none}.grain{position:absolute;inset:0;z-index:-1;opacity:0;background-image:linear-gradient(45deg,#ffffff06 25%,transparent 25%,transparent 75%,#ffffff06 75%),linear-gradient(45deg,#ffffff06 25%,transparent 25%,transparent 75%,#ffffff06 75%);background-position:0 0,3px 3px;background-size:6px 6px;pointer-events:none}.hero-content{height:100%;display:flex;align-items:center;opacity:var(--fade);transform:translate3d(0,calc(var(--progress) * -65px),0) scale(calc(1 + var(--progress)*.17));transform-origin:36% 50%;will-change:transform,opacity}.hero-copy{max-width:660px;padding:26px 30px 28px;margin-top:42px;border:1px solid rgba(177,255,175,.22);border-radius:18px;background:rgba(5,22,12,.40);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 18px 70px rgba(0,0,0,.17)}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#ffffff;border:1px solid #72f26b80;border-radius:6px;background:#102c1ca8;padding:9px 12px;font-size:10px;letter-spacing:1.5px;font-weight:900}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}h1{font-size:clamp(22px,3.0vw,43px);line-height:1.45;margin:22px 0 17px;letter-spacing:-1.8px}.hero-heading{display:flex;align-items:center;gap:clamp(8px,1.1vw,18px);min-width:0}.hero-panda{width:clamp(45px,6vw,92px);height:auto;object-fit:contain;flex:none;filter:drop-shadow(0 3px 12px #5aff3450);transform:translateY(-5px)}@media(max-width:600px){.hero-heading{gap:7px}.hero-panda{width:clamp(34px,9vw,55px)}.hero-heading .hero-title{font-size:clamp(20px,6vw,38px);letter-spacing:-1px}}.hero-title{display:block;color:var(--green);white-space:nowrap;text-shadow:0 8px 40px #4cff3b55}.hero-title .title-lt{color:#ffffff}.hero-copy p{max-width:540px;font-size:clamp(14px,1.15vw,16px);line-height:1.7;color:#edf8e9}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{padding:15px 21px;border-radius:8px;font-weight:900;border:1px solid #8cff5570;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-3px)}.btn-primary{background:var(--green);color:#09200d}.btn-ghost{background:#13291dd9;color:white}.discord-btn{font-size:13px;padding:12px 16px;display:inline-flex;align-items:center;gap:8px}.hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#dcf9d8;opacity:calc(1 - var(--progress)*3);display:flex;flex-direction:column;align-items:center;gap:9px;white-space:nowrap}.hint span{font-size:23px;animation:bob 1.5s infinite}@keyframes bob{50%{transform:translateY(7px)}}.reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;opacity:0;transform:translateY(40px);pointer-events:none}.reveal strong{font-size:clamp(24px,4vw,56px);line-height:1.5;color:var(--green)}.info{position:relative;z-index:2;background:linear-gradient(180deg,#05110b,#0b1d12 45%,#08150e);padding:110px 0 110px;min-height:100vh}.kicker{color:var(--green);font-weight:900;letter-spacing:3px;font-size:12px}.section-title{font-size:clamp(32px,4vw,54px);margin:16px 0}.lead{font-size:19px;color:var(--muted);max-width:720px;line-height:1.7}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:38px 0 55px}.stat,.card{border:1px solid var(--line);background:linear-gradient(145deg,#142c1d,#0c1d13);border-radius:14px;padding:25px}.stat small{display:block;color:#a9c3ad;font-size:12px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.stat b{display:block;margin-top:12px;font-size:21px;color:var(--white)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card .emoji{font-size:31px}.card h3{font-size:24px;margin:15px 0 8px}.card p{color:var(--muted);line-height:1.65;margin:0}.strip{margin-top:65px;padding:34px;border:1px solid #5eac55;border-radius:16px;background:linear-gradient(110deg,#173a22,#0c2215);display:flex;align-items:center;justify-content:space-between;gap:20px}.strip h2{margin:0 0 8px}.strip p{margin:0;color:var(--muted)}.lower{padding:80px 0;border-top:1px solid #2c4c35}.lower h2{font-size:32px}.lower p{color:var(--muted);line-height:1.7}footer{padding:32px 0;color:#a2b9a5;border-top:1px solid #294432;text-align:center;font-size:13px}@media(max-width:760px){nav{height:72px}.brand img{width:175px;max-width:50vw}.links{gap:12px;font-size:12px}.links a:nth-child(2),.links a:nth-child(3){display:none}.nav-ip{display:none}.hero-copy{padding:22px 18px;margin-top:35px;max-width:100%}h1{font-size:clamp(17px,4.7vw,32px)}.journey{height:290vh}.forest{transform-origin:62% 43%}.stats,.cards{grid-template-columns:1fr}.strip{align-items:flex-start;flex-direction:column}.hero-copy p{font-size:16px}.eyebrow{font-size:9px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.forest,.hero-content{transform:none!important}.hero-content{opacity:1!important}.darkness{opacity:.3!important}.hint{display:none}}
+
+
+:root{--bg:#08150e;--panel:#10241a;--line:#315440;--green:#8cff55;--white:#f5fff1;--muted:#b5cbbb;--progress:0;--zoom:1;--fade:1;--shade:.22}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--white);font-family:Outfit,Arial,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:4px}.container{width:min(1160px,90%);margin:auto}.pixel{font-family:'Press Start 2P',monospace}header{position:fixed;top:0;left:0;right:0;z-index:80;background:#08190fc9;border-bottom:1px solid #a8fda61c;backdrop-filter:blur(16px)}nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand img{width:220px;max-width:36vw;display:block;height:auto}.links{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:800}.links a:hover{color:var(--green)}.links a{transition:color .2s ease,transform .2s ease}.links a:hover{transform:translateY(-1px)}.links .wiki-nav-link{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid rgba(140,255,85,.38);border-radius:8px;background:rgba(140,255,85,.09);color:#baff9b;white-space:nowrap}.links .wiki-nav-link:hover{background:rgba(140,255,85,.19);border-color:var(--green);color:#fff;box-shadow:0 0 18px rgba(140,255,85,.13)}.nav-ip{display:inline-flex;align-items:center;gap:11px;padding:8px 14px 8px 10px;border:1px solid rgba(151,255,115,.65);background:linear-gradient(135deg,rgba(35,85,47,.9),rgba(11,36,24,.96));border-radius:12px;color:#f3fff0;font-weight:800;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 5px 20px rgba(0,0,0,.16);transition:transform .2s,border-color .2s,box-shadow .2s,*background* .2s}.nav-ip:hover{transform:translateY(-2px);border-color:#9aff71;box-shadow:0 7px 25px rgba(113,255,89,.18),inset 0 1px 0 rgba(255,255,255,.15)}.nav-ip:focus-visible{outline:2px solid #aaff85;outline-offset:3px}.nav-ip-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:rgba(145,255,107,.14);color:#a0ff7b}.nav-ip-icon svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.nav-ip-text{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.15}.nav-ip-label{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#9de58d}.nav-ip-address{font-size:13px;letter-spacing:.1px}.nav-ip-arrow{color:#a4ff80;font-size:17px;margin-left:2px}.journey{height:340vh;position:relative}.stage{height:100vh;position:sticky;top:0;overflow:hidden;isolation:isolate;background:#06140a}.forest{position:absolute;inset:-3%;background:url('minecraft-bg.png') center 49%/cover no-repeat;transform-origin:62% 42%;transform:scale(var(--zoom));will-change:transform;z-index:-4;filter:blur(2px)}.forest::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,16,8,.47),rgba(4,16,8,.13) 56%,rgba(4,16,8,.04)),linear-gradient(0deg,rgba(4,14,8,.50),transparent 45%)}.darkness{position:absolute;inset:0;z-index:-2;background:#05110b;opacity:var(--shade);pointer-events:none}.grain{position:absolute;inset:0;z-index:-1;opacity:0;background-image:linear-gradient(45deg,#ffffff06 25%,transparent 25%,transparent 75%,#ffffff06 75%),linear-gradient(45deg,#ffffff06 25%,transparent 25%,transparent 75%,#ffffff06 75%);background-position:0 0,3px 3px;background-size:6px 6px;pointer-events:none}.hero-content{height:100%;display:flex;align-items:center;opacity:var(--fade);transform:translate3d(0,calc(var(--progress) * -65px),0) scale(calc(1 + var(--progress)*.17));transform-origin:36% 50%;will-change:transform,opacity}.hero-copy{max-width:660px;padding:26px 30px 28px;margin-top:42px;border:1px solid rgba(177,255,175,.22);border-radius:18px;background:rgba(5,22,12,.40);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 18px 70px rgba(0,0,0,.17)}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#ffffff;border:1px solid #72f26b80;border-radius:6px;background:#102c1ca8;padding:9px 12px;font-size:10px;letter-spacing:1.5px;font-weight:900}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}h1{font-size:clamp(22px,3.0vw,43px);line-height:1.45;margin:22px 0 17px;letter-spacing:-1.8px}.hero-heading{display:flex;align-items:center;gap:clamp(8px,1.1vw,18px);min-width:0}.hero-panda{width:clamp(45px,6vw,92px);height:auto;object-fit:contain;flex:none;filter:drop-shadow(0 3px 12px #5aff3450);transform:translateY(-5px)}@media(max-width:600px){.hero-heading{gap:7px}.hero-panda{width:clamp(34px,9vw,55px)}.hero-heading .hero-title{font-size:clamp(20px,6vw,38px);letter-spacing:-1px}}.hero-title{display:block;color:var(--green);white-space:nowrap;text-shadow:0 8px 40px #4cff3b55}.hero-title .title-lt{color:#ffffff}.hero-copy p{max-width:540px;font-size:clamp(14px,1.15vw,16px);line-height:1.7;color:#edf8e9}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{padding:15px 21px;border-radius:8px;font-weight:900;border:1px solid #8cff5570;transition:transform .2s,*background* .2s}.btn:hover{transform:translateY(-3px)}.btn-primary{background:var(--green);color:#09200d}.btn-ghost{background:#13291dd9;color:white}.discord-btn{font-size:13px;padding:12px 16px;display:inline-flex;align-items:center;gap:8px}.hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#dcf9d8;opacity:calc(1 - var(--progress)*3);display:flex;flex-direction:column;align-items:center;gap:9px;white-space:nowrap}.hint span{font-size:23px;animation:bob 1.5s infinite}@keyframes bob{50%{transform:translateY(7px)}}.reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;opacity:0;transform:translateY(40px);pointer-events:none}.reveal strong{font-size:clamp(24px,4vw,56px);line-height:1.5;color:var(--green)}.info{position:relative;z-index:2;background:linear-gradient(180deg,#05110b,#0b1d12 45%,#08150e);padding:110px 0 110px;min-height:100vh}.kicker{color:var(--green);font-weight:900;letter-spacing:3px;font-size:12px}.section-title{font-size:clamp(32px,4vw,54px);margin:16px 0}.lead{font-size:19px;color:var(--muted);max-width:720px;line-height:1.7}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:38px 0 55px}.stat,.card{border:1px solid var(--line);background:linear-gradient(145deg,#142c1d,#0c1d13);border-radius:14px;padding:25px}.stat small{display:block;color:#a9c3ad;font-size:12px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.stat b{display:block;margin-top:12px;font-size:21px;color:var(--white)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card .emoji{font-size:31px}.card h3{font-size:24px;margin:15px 0 8px}.card p{color:var(--muted);line-height:1.65;margin:0}.strip{margin-top:65px;padding:34px;border:1px solid #5eac55;border-radius:16px;background:linear-gradient(110deg,#173a22,#0c2215);display:flex;align-items:center;justify-content:space-between;gap:20px}.strip h2{margin:0 0 8px}.strip p{margin:0;color:var(--muted)}.lower{padding:80px 0;border-top:1px solid #2c4c35}.lower h2{font-size:32px}.lower p{color:var(--muted);line-height:1.7}footer{padding:32px 0;color:#a2b9a5;border-top:1px solid #294432;text-align:center;font-size:13px}@media(max-width:760px){nav{height:72px}.brand img{width:175px;max-width:50vw}.links{gap:12px;font-size:12px}.links a:nth-child(2),.links a:nth-child(3){display:none}.nav-ip{display:none}.hero-copy{padding:22px 18px;margin-top:35px;max-width:100%}h1{font-size:clamp(17px,4.7vw,32px)}.journey{height:290vh}.forest{transform-origin:62% 43%}.stats,.cards{grid-template-columns:1fr}.strip{align-items:flex-start;flex-direction:column}.hero-copy p{font-size:16px}.eyebrow{font-size:9px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.forest,.hero-content{transform:none!important}.hero-content{opacity:1!important}.darkness{opacity:.3!important}.hint{display:none}}
+
+
+
+
 
 
 
 /* Bambukas Wiki – originalus trijų kolonų maketas */
 
+
+
 .info{padding:88px 0 125px;background:radial-gradient(ellipse at 50% 0%,#173b24 0%,#08170e 55%);}
 
+
+
 .wiki-intro{margin-bottom:32px}.wiki-intro h2{font-size:clamp(26px,3vw,42px);margin:9px 0 12px}.wiki-intro p{color:var(--muted);line-height:1.6;max-width:680px;margin:0}.wiki-layout{display:grid;grid-template-columns:240px minmax(0,1fr) 190px;align-items:start;gap:18px}.wiki-sidebar,.wiki-article,.wiki-toc{border:1px solid #34533d;background:rgba(16,34,23,.93);border-radius:13px;box-shadow:0 16px 40px #0004}.wiki-sidebar,.wiki-toc{padding:18px;position:sticky;top:96px}.wiki-sidebar input{width:100%;background:#0b1b12;border:1px solid #45644b;border-radius:7px;padding:12px;color:white;outline:none}.wiki-sidebar input:focus{border-color:var(--green)}.wiki-group{margin-top:20px}.wiki-group h3,.wiki-toc h3{font-size:10px;letter-spacing:1.6px;color:#f3c06d;margin:0 0 10px}.wiki-link{display:block;width:100%;text-align:left;padding:11px 12px;background:transparent;border:0;border-left:2px solid transparent;color:#c7d8c7;border-radius:4px;font-size:13px;font-weight:700}.wiki-link:hover,.wiki-link.active{background:#1c3925;color:#aaff7d;border-left-color:var(--green)}.wiki-article{min-height:540px;padding:clamp(22px,3vw,43px);overflow-wrap:anywhere}.wiki-eyebrow{color:#a3fb80;letter-spacing:2px;font-size:11px;font-weight:900}.wiki-heading{font-size:clamp(21px,2.2vw,32px);line-height:1.6;margin:17px 0 20px;overflow-wrap:anywhere}.wiki-rule{border:0;border-top:1px solid #34503b;margin:22px 0 26px}.wiki-body{font-size:15px;line-height:1.85;color:#d5e4d4}.wiki-body h3{font-size:22px;color:#fff;margin:30px 0 9px}.wiki-body p{margin:0 0 15px}.wiki-body ul,.wiki-body ol{padding-left:24px}.wiki-body li{margin:7px 0}.wiki-body code{background:#1f3b29;color:#a5ff80;padding:2px 6px;border-radius:4px}.wiki-note{padding:15px 18px;border-left:3px solid var(--green);background:#1c3925;border-radius:6px;margin:22px 0}.wiki-toc button{display:block;background:none;border:0;text-align:left;color:#bfd8c0;font-size:12px;padding:9px 0;width:100%}.wiki-toc button:hover{color:var(--green)}.wiki-empty{font-size:13px;color:#b9cbb9}.wiki-bottom{margin-top:32px;padding-top:20px;border-top:1px solid #34503b;display:flex;justify-content:space-between;gap:15px;align-items:center}.wiki-bottom small{color:#a3b8a5}.wiki-bottom button{background:#9aff65;color:#08200b;border:0;border-radius:7px;padding:11px 15px;font-weight:800}.wiki-footer{padding:55px 0;color:#a2b9a5;text-align:center;font-size:13px;border-top:1px solid #294432}
+
+
 
 @media(max-width:1050px){.wiki-layout{grid-template-columns:210px minmax(0,1fr)}.wiki-toc{display:none}}@media(max-width:700px){.wiki-layout{grid-template-columns:1fr}.wiki-sidebar{position:static}.wiki-group{display:inline-block;vertical-align:top;width:49%}.wiki-article{padding:22px}.wiki-heading{font-size:20px}.wiki-intro{margin-top:5px}}
 
 
+
+
+
 /* Atnaujinta Bambukas.lt navigacija */
+
 .links{gap:9px;flex-wrap:wrap;justify-content:center}
-.links .nav-pill,.links .wiki-nav-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 13px;border:1px solid rgba(140,255,85,.29);border-radius:9px;background:rgba(25,55,33,.65);color:#e5f4df;font-size:13px;font-weight:800;white-space:nowrap;transition:background .2s,border-color .2s,box-shadow .2s,transform .2s,color .2s}
+
+.links .nav-pill,.links .wiki-nav-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 13px;border:1px solid rgba(140,255,85,.29);border-radius:9px;background:rgba(25,55,33,.65);color:#e5f4df;font-size:13px;font-weight:800;white-space:nowrap;transition:*background* .2s,border-color .2s,box-shadow .2s,transform .2s,color .2s}
+
 .links .nav-pill:hover,.links .wiki-nav-link:hover,.links .nav-pill:focus-visible{background:rgba(140,255,85,.16);border-color:var(--green);color:var(--green);box-shadow:0 5px 22px rgba(105,255,75,.12);transform:translateY(-2px)}
+
 .links .nav-pill.active{border-color:rgba(140,255,85,.65);color:var(--green);background:rgba(140,255,85,.12)}
+
 .nav-icon{width:16px;height:16px;display:inline-block;flex:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;fill:none}
+
 @media(max-width:950px){nav{height:auto;min-height:78px;padding:10px 0;flex-wrap:wrap}.links{order:3;width:100%;justify-content:center}.nav-ip{margin-left:auto}}
+
 @media(max-width:760px){.links a:nth-child(2),.links a:nth-child(3){display:inline-flex}.links{gap:6px}.links .nav-pill,.links .wiki-nav-link{font-size:11px;padding:9px 10px}.nav-icon{width:14px;height:14px}.brand img{width:160px}.nav-ip{font-size:11px;padding:9px}}
+
 @media(max-width:390px){.links .nav-pill,.links .wiki-nav-link{font-size:10px;padding:8px 7px}}
 
+
+
 /* Serverio IP mygtukas: atskiros eilutes ir tvarkingas isdestymas */
+
 header .nav-ip{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;min-height:54px;padding:8px 13px}
+
 header .nav-ip .nav-ip-icon{display:grid;place-items:center;flex:0 0 32px}
+
 header .nav-ip .nav-ip-text{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center;gap:3px;min-width:0;line-height:1.1}
+
 header .nav-ip .nav-ip-label{display:block!important;font-size:10px!important;line-height:1.1;color:#a9f49a;letter-spacing:.8px}
+
 header .nav-ip .nav-ip-address{display:block!important;font-size:13px!important;line-height:1.2;color:#fff;letter-spacing:0}
+
 header .nav-ip .nav-ip-arrow{flex-shrink:0}
+
 .hero-copy .hero-tagline{display:block;margin-top:12px;color:#9cff68;font-weight:800;letter-spacing:.015em}.hero-copy p strong{color:#fff;font-weight:800}
+
 </style><style>
+
 /* Tvarkingas patvirtinimas nukopijavus IP */
+
 [data-copy].copy-success{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;min-width:max-content;white-space:nowrap;background:linear-gradient(135deg,#1b492d,#102c20)!important;border:1px solid #91ff6d!important;color:#fff!important;box-shadow:0 0 0 3px rgba(119,255,91,.09),0 10px 26px rgba(0,0,0,.22)!important;animation:copyPop .25s ease-out}
+
 .copy-success-icon{display:grid;place-items:center;flex-shrink:0;width:29px;height:29px;border-radius:9px;background:#8fff6c;color:#102314;font-size:18px;font-weight:900}
+
 .copy-success-text{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.15;text-align:left}
+
 .copy-success-text strong{font-size:12px;font-weight:800;color:#b8ffa1}
+
 .copy-success-text small{font-size:11px;font-weight:600;color:#fff;letter-spacing:0}
+
 @keyframes copyPop{from{opacity:.7;transform:translateY(3px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+
 @media(prefers-reduced-motion:reduce){[data-copy].copy-success{animation:none}}
+
 </style><style>
+
 /* Bambukas.lt: permatomi pagrindinio ekrano mygtukai */
+
 .hero-copy .actions{gap:12px;align-items:center}
-.hero-copy .actions .hero-glass{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:49px;padding:12px 18px;border-radius:11px;border:1px solid rgba(230,255,229,.55);background:rgba(255,255,255,.11);color:#fff;backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 7px 20px rgba(0,0,0,.13);text-decoration:none;cursor:pointer;transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease}
+
+.hero-copy .actions .hero-glass{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:49px;padding:12px 18px;border-radius:11px;border:1px solid rgba(230,255,229,.55);background:rgba(255,255,255,.11);color:#fff;backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 7px 20px rgba(0,0,0,.13);text-decoration:none;cursor:pointer;transition:transform .22s ease,*background* .22s ease,border-color .22s ease,box-shadow .22s ease}
+
 .hero-copy .actions .hero-glass:hover{transform:translateY(-3px);background:rgba(255,255,255,.19);border-color:rgba(165,255,145,.9);box-shadow:0 9px 28px rgba(84,255,79,.14),inset 0 1px 0 rgba(255,255,255,.2)}
+
 .hero-copy .actions .hero-glass:focus-visible{outline:3px solid #a6ff8a;outline-offset:3px}
+
 .hero-copy .actions .glass-icon{display:inline-flex;align-items:center;justify-content:center;flex:none;color:#b5ff9b;background:none;width:auto;height:auto;font-size:18px}
+
 .hero-copy .actions .glass-icon svg{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
 .hero-copy .actions .glass-label{display:inline-flex;align-items:center;line-height:1.2}
+
 .hero-copy .actions .glass-label strong{font-size:13px;font-weight:800;white-space:nowrap;color:#fff}
+
 .hero-copy .actions .glass-arrow{font-size:16px;color:#b5ff9b}
+
 @media(max-width:520px){.hero-copy .actions .hero-glass{width:100%;min-height:49px}.hero-copy .actions .glass-label strong{white-space:normal}}
+
 @media(prefers-reduced-motion:reduce){.hero-copy .actions .hero-glass{transition:none}}
 
+
+
 </style>
+
 <style id="bambukas-enhancements">
+
 /* Švelnus žalių dalelių sniegas */
+
 #bamboo-particles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:8}
+
 .bamboo-particle{position:absolute;top:-20px;width:var(--size);height:var(--size);border-radius:50%;background:#8aff80;opacity:0;box-shadow:0 0 7px #69ff75;animation:bamboo-fall var(--duration) linear var(--delay) infinite;left:var(--left)}
+
 @keyframes bamboo-fall{0%{transform:translate3d(0,-15px,0);opacity:0}10%{opacity:var(--opacity)}85%{opacity:var(--opacity)}100%{transform:translate3d(var(--drift),105vh,0);opacity:0}}
+
 @media(prefers-reduced-motion:reduce){.bamboo-particle{animation:none;display:none}}
+
 .nav-pill.active{color:#a7ff8a!important;border-color:rgba(139,255,135,.55)!important;background:rgba(52,121,58,.26)!important;box-shadow:inset 0 0 0 1px rgba(139,255,135,.12),0 0 20px rgba(85,255,95,.09)}
+
 </style></head>
+
+
 
 <body>
 
+
+
 <header><nav class="container"><a class="brand" href="#pradzia" aria-label="Bambukas.lt pradžia"><img src="logo.png" alt="play.bambukas.net logotipas"></a><div class="links"><a class="nav-pill active" href="#pradzia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg><span>Pradžia</span></a><a class="nav-pill" href="#informacija"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c-2-2-5-2-9-2v14c4 0 7 0 9 2 2-2 5-2 9-2V5c-4 0-7 0-9 2ZM12 7v14"/></svg><span>Informacija</span></a><a class="nav-pill" href="#bendruomene"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 5v1"/></svg><span>Bendruomenė</span></a><a class="wiki-nav-link" href="https://gaudiesiuseimantas-ship-it.github.io/bambukas-wiki/#pradzia" target="_blank" rel="noopener noreferrer" aria-label="Atidaryti Bambukas.lt Wiki"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5ZM4 18.5A2.5 2.5 0 0 1 6.5 16H20M8 7h8M8 11h6"/></svg><span>Wiki ↗</span></a></div><button class="nav-ip" data-copy title="Kopijuoti serverio IP: play.bambukas.net" aria-label="Kopijuoti serverio IP play.bambukas.net"><span class="nav-ip-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span><span class="nav-ip-text"><span class="nav-ip-label">Serverio IP</span><span class="nav-ip-address">play.bambukas.net</span></span><span class="nav-ip-arrow" aria-hidden="true">↗</span></button></nav></header>
+
+
 
 <main>
 
+
+
 <section class="journey" id="pradzia" aria-label="Bambukas.lt įžanga"><div class="stage" id="stage"><div class="forest" aria-hidden="true"></div><div class="darkness" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="hero-content container" id="heroText"><div class="hero-copy"><div class="eyebrow"> » TAVO UNIKALI MINECRAFT PATIRTIS «</div><h1 class="pixel hero-heading"><img class="hero-panda" src="panda-bambukas.png" alt="Bambukas.lt panda su bambuku"><span class="hero-title">BAMBUKAS<span class="title-lt">.LT</span></span></h1><p>Ženk į <strong>Bambukas Network</strong> pasaulį, kuriame tavęs laukia įspūdingi nuotykiai, paslaptingi atradimai ir nauji iššūkiai. Kurk, tyrinėk, varžykis ir atrask savo vietą mūsų bendruomenėje.<span class="hero-tagline">Tavo pasaulis. Tavo nuotykis. Tavo istorija.</span></p><div class="actions"><button class="btn btn-primary hero-glass" data-copy aria-label="Kopijuoti serverio IP"><span class="glass-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span><span class="glass-label"><strong>Kopijuoti IP</strong></span><span class="glass-arrow" aria-hidden="true">→</span></button><a class="btn btn-ghost discord-btn hero-glass" href="#" onclick="alert('Discord nuoroda bus pridėta netrukus!'); return false;" aria-label="Prisijungti prie Discord"><span class="glass-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.95L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5Z"/></svg></span><span class="glass-label"><strong>Prisijungti prie Discord</strong></span><span class="glass-arrow" aria-hidden="true">↗</span></a></div></div></div><div class="hint" aria-hidden="true">Slink žemyn ir keliauk į mišką <span>↓</span></div></div></section>
+
+
 
 <section class="info" id="informacija"><div class="container">
 
+
+
 <div class="wiki-intro"><div class="kicker">BAMBUKAS.LT · ŽINIŲ BAZĖ</div><h2>Nuotykių žinynas <span style="color:var(--green)">✦</span></h2><p>Visi atsakymai vienoje vietoje. Pasirink temą kairėje ir sužinok daugiau apie Minecraft pasaulį.</p></div>
+
+
 
 <div class="wiki-layout"><aside class="wiki-sidebar" aria-label="Wiki navigacija"><input id="wikiSearch" type="search" placeholder="⌕ Ieškoti informacijos..." aria-label="Ieškoti Wiki"><div id="wikiNav"></div></aside><article class="wiki-article" aria-live="polite"><div class="wiki-eyebrow" id="wikiCategory">PRADŽIA / GIDAS</div><h2 class="wiki-heading pixel" id="wikiTitle">Naujoko gidas</h2><hr class="wiki-rule"><div class="wiki-body" id="wikiContent"></div><div class="wiki-bottom"><small>🌿 Bambukas.lt žinynas</small><button id="wikiNext" type="button">Kita tema →</button></div></article><aside class="wiki-toc" aria-label="Šio puslapio turinys"><h3>ŠIAME PUSLAPYJE</h3><div id="wikiToc"></div></aside></div>
 
+
+
 </div></section>
+
+
 
 <section class="lower" id="bendruomene"><div class="container"><div class="kicker">BAMBUKAS.LT</div><h2>Pasiruošęs nuotykiui?</h2><p>Serverio adresas: <strong>play.bambukas.net</strong></p><button class="btn btn-primary" data-copy>⧉ Kopijuoti IP</button></div></section>
 
+
+
 </main><footer>© <span id="year"></span> Bambukas.lt · Minecraft bendruomenė</footer>
+
+
 
 <script>
 
+
+
 (()=>{'use strict';const journey=document.querySelector('.journey'),stage=document.querySelector('#stage'),hero=document.querySelector('#heroText');let ticking=false;const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));function update(){ticking=false;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const rect=journey.getBoundingClientRect();const travel=Math.max(1,journey.offsetHeight-innerHeight);const p=clamp(-rect.top/travel,0,1);/* Zoom toward bamboo forest depth, slightly right of center */const ease=p*p*(3-2*p);const zoom=1+1.35*ease;const fade=1-clamp((p-.13)/.37,0,1);const shade=.03+.97*clamp((p-.29)/.61,0,1);stage.style.setProperty('--progress',p.toFixed(4));stage.style.setProperty('--zoom',zoom.toFixed(4));stage.style.setProperty('--fade',fade.toFixed(4));stage.style.setProperty('--shade',shade.toFixed(4));hero.style.pointerEvents=fade<.1?'none':'auto'}function schedule(){if(!ticking){ticking=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);update();document.querySelector('#year').textContent=new Date().getFullYear();document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('play.bambukas.net');if(b._copyTimer)clearTimeout(b._copyTimer);if(!b.dataset.originalHtml)b.dataset.originalHtml=b.innerHTML;b.classList.add('copy-success');b.innerHTML='<span class="copy-success-icon" aria-hidden="true">✓</span><span class="copy-success-text"><strong>IP nukopijuotas!</strong><small>play.bambukas.net</small></span>';b._copyTimer=setTimeout(()=>{b.innerHTML=b.dataset.originalHtml;b.classList.remove('copy-success');},2200)}catch{prompt('Nukopijuok serverio IP:','play.bambukas.net')}}));})();
+
+
 
 </script><script>
 
+
+
 (()=>{
+
+
 
 const groups=[{name:'PRADŽIA',pages:['naujokas','prisijungimas','komandos']},{name:'ŽAIDIMAS',pages:['rezidencijos','ekonomika','pozemiai','taskai','zvejyba']},{name:'BENDRUOMENĖ',pages:['administracija','taisykles','atrankos']}];
 
+
+
 const pages={
+
+
 
 naujokas:{title:'Naujoko gidas',category:'PRADŽIA / GIDAS',sections:[['Pirmieji žingsniai','<p>Sveikas atvykęs į Bambukas.lt! Šis gidas padės susipažinti su serveriu ir pasiruošti pirmiesiems nuotykiams.</p><ol><li>Prisijunk prie Minecraft serverio.</li><li>Perskaityk bendruomenės taisykles.</li><li>Susirask vietą pirmajai bazei ir pradėk rinkti išteklius.</li></ol>'],['Ką verta žinoti?','<p>Neskubėk – tyrinėk aplinką, bendrauk su kitais žaidėjais ir saugok savo daiktus. Jei kyla klausimų, kreipkis į administraciją.</p><div class="wiki-note">Tai pavyzdinis gidas. Tikros serverio funkcijos ir taisyklės bus patikslintos vėliau.</div>']]},
 
+
+
 prisijungimas:{title:'Kaip prisijungti',category:'PRADŽIA / PAGALBA',sections:[['Prisijungimas','<ol><li>Atidaryk Minecraft Java Edition.</li><li>Pasirink „Multiplayer“ ir „Add Server“.</li><li>Įvesk adresą <code>play.bambukas.net</code>.</li><li>Išsaugok ir bandyk prisijungti.</li></ol>'],['Jei nepavyksta','<p>Patikrink, ar teisingai įvestas adresas, ar veikia interneto ryšys ir ar tavo žaidimo versija palaikoma. Serverio versiją dar patikslinsime.</p>']]},
+
+
 
 komandos:{title:'Serverio komandos',category:'PRADŽIA / KOMANDOS',sections:[['Naudingos komandos','<p>Čia bus pateiktos dažniausiai naudojamos Bambukas.lt komandos ir jų paskirtis.</p><ul><li><code>/spawn</code> – dažnai naudojama grįžti į pradinę vietą.</li><li><code>/msg</code> – dažnai naudojama privačiai žinutei.</li><li><code>/help</code> – dažnai pateikia pagalbos informaciją.</li></ul>'],['Svarbu','<div class="wiki-note">Tai tik pavyzdžiai. Dar nepatvirtinta, kurios komandos veikia Bambukas.lt serveryje.</div>']]},
 
+
+
 rezidencijos:{title:'Rezidencijos',category:'ŽAIDIMAS / APSAUGA',sections:[['Kas yra rezidencija?','<p>Rezidencija – tai žaidėjo teritorija, kuri kai kuriuose Minecraft serveriuose gali būti apsaugota nuo kitų žaidėjų veiksmų.</p>'],['Kaip naudotis?','<p>Šiame puslapyje vėliau pateiksime tikras Bambukas.lt rezidencijų kūrimo, plėtimo ir leidimų valdymo instrukcijas.</p>'],['Patarimai','<p>Prieš statydamas bazę, pasitikrink, ar pasirinkta vieta laisva ir ar serveris leidžia ją apsaugoti.</p>']]},
+
+
 
 ekonomika:{title:'Ekonomika',category:'ŽAIDIMAS / PREKYBA',sections:[['Prekyba ir valiuta','<p>Jei serveryje veiks ekonomikos sistema, čia bus aprašyta valiuta, prekybos galimybės ir būdai užsidirbti.</p>'],['Sąžininga prekyba','<p>Prieš keisdamasis daiktais susitark dėl sąlygų ir saugokis apgaulingų pasiūlymų.</p>']]},
 
+
+
 pozemiai:{title:'Požemiai',category:'ŽAIDIMAS / NUOTYKIAI',sections:[['Tyrinėjimas','<p>Minecraft požemiuose galima sutikti įvairių priešų, atrasti išteklių ir patirti naujų iššūkių.</p>'],['Pasiruošimas','<p>Prieš leisdamasis į požemius pasiimk maisto, įrankių, šarvų ir apšvietimo priemonių.</p>'],['Serverio iššūkiai','<p>Jei Bambukas.lt turės specialius požemius, jų taisyklės ir apdovanojimai bus pateikti čia.</p>']]},
+
+
 
 taskai:{title:'Taškai',category:'ŽAIDIMAS / PASIEKIMAI',sections:[['Pasiekimų sistema','<p>Ši skiltis skirta būsimiems serverio taškams, pasiekimams ir apdovanojimams aprašyti.</p>'],['Kaip rinkti?','<p>Konkrečias taškų gavimo sąlygas paskelbsime, kai bus patvirtinta serverio sistema.</p>']]},
 
+
+
 zvejyba:{title:'Žvejyba',category:'ŽAIDIMAS / VEIKLOS',sections:[['Žvejyba Minecraft pasaulyje','<p>Žvejyba – rami veikla, leidžianti praleisti laiką prie vandens ir rinkti laimikius.</p>'],['Naudingi patarimai','<p>Susirask saugią vietą prie vandens, pasiruošk meškerę ir išbandyk skirtingas žvejybos vietas.</p>']]},
+
+
 
 administracija:{title:'Administracija',category:'BENDRUOMENĖ / KOMANDA',sections:[['Apie komandą','<p>Administracija rūpinasi žaidėjų patirtimi, pagalba ir bendruomenės tvarka. Tikrieji komandos nariai bus įrašyti vėliau.</p>'],['Savininkas','<p>Projekto savininkas atsakingas už bendrą serverio kryptį ir svarbiausius sprendimus.</p>'],['Administratoriai ir moderatoriai','<p>Komandos nariai padeda žaidėjams, nagrinėja pranešimus ir prižiūri, kad būtų laikomasi taisyklių.</p>'],['Kaip kreiptis?','<p>Jei reikia pagalbos, naudok oficialius projekto bendravimo kanalus, kai jie bus paskelbti.</p>']]},
 
+
+
 taisykles:{title:'Serverio taisyklės',category:'BENDRUOMENĖ / TVARKA',sections:[['Pagarba kitiems','<p>Bendrauk mandagiai, neįžeidinėk kitų žaidėjų ir netrukdyk jiems mėgautis žaidimu.</p>'],['Sąžiningas žaidimas','<p>Gerbk kitų žaidėjų darbą ir venk nesąžiningo pranašumo.</p>'],['Svarbi pastaba','<div class="wiki-note">Tai pavyzdinės taisyklės, o ne oficialus Bambukas.lt taisyklių sąrašas. Prieš skelbiant reikės jas patvirtinti.</div>']]},
+
+
 
 atrankos:{title:'Atrankos į komandą',category:'BENDRUOMENĖ / ATRANKOS',sections:[['Prisijunk prie komandos','<p>Čia ateityje bus skelbiamos atrankos į pagalbininkų, moderatorių ar kitas komandos pozicijas.</p>'],['Ko tikimės?','<p>Pagarba žaidėjams, atsakingumas, gebėjimas dirbti komandoje ir noras padėti bendruomenei.</p>'],['Paraiškos','<p>Atrankų datos ir paraiškų pateikimo būdas dar nepaskelbti.</p>']]}
 
+
+
 };
+
+
 
 const nav=document.getElementById('wikiNav'),search=document.getElementById('wikiSearch'),title=document.getElementById('wikiTitle'),category=document.getElementById('wikiCategory'),content=document.getElementById('wikiContent'),toc=document.getElementById('wikiToc'),next=document.getElementById('wikiNext');const all=groups.flatMap(g=>g.pages);let current='naujokas';
 
+
+
 function renderNav(filter=''){nav.replaceChildren();let found=0;groups.forEach(group=>{const ids=group.pages.filter(id=>pages[id].title.toLocaleLowerCase('lt').includes(filter)||group.name.toLocaleLowerCase('lt').includes(filter));if(!ids.length)return;found+=ids.length;const wrap=document.createElement('div');wrap.className='wiki-group';const h=document.createElement('h3');h.textContent=group.name;wrap.append(h);ids.forEach(id=>{const b=document.createElement('button');b.className='wiki-link'+(id===current?' active':'');b.textContent=pages[id].title;b.type='button';b.addEventListener('click',()=>openPage(id,true));wrap.append(b)});nav.append(wrap)});if(!found){const e=document.createElement('p');e.className='wiki-empty';e.textContent='Nieko nerasta.';nav.append(e)}}
+
+
 
 function openPage(id,scroll=false){if(!pages[id])return;current=id;const p=pages[id];title.textContent=p.title;category.textContent=p.category;content.replaceChildren();toc.replaceChildren();p.sections.forEach(([heading,html],i)=>{const h=document.createElement('h3');h.id='wiki-part-'+i;h.textContent=heading;const div=document.createElement('div');div.innerHTML=html;content.append(h,div);const b=document.createElement('button');b.textContent=heading;b.type='button';b.addEventListener('click',()=>h.scrollIntoView({behavior:'smooth',block:'center'}));toc.append(b)});next.textContent='Kita tema → '+pages[all[(all.indexOf(id)+1)%all.length]].title;renderNav(search.value.trim().toLocaleLowerCase('lt'));if(scroll){document.querySelector('#informacija').scrollIntoView({behavior:'smooth',block:'start'})}history.replaceState(null,'','#wiki-'+id)}
 
+
+
 search.addEventListener('input',()=>renderNav(search.value.trim().toLocaleLowerCase('lt')));next.addEventListener('click',()=>openPage(all[(all.indexOf(current)+1)%all.length],false));openPage(location.hash.startsWith('#wiki-')?location.hash.slice(6):'naujokas');
 
+
+
 })();
 
+
+
 </script><script id="bambukas-enhancements-js">
+
 (()=>{
+
 const layer=document.createElement('div');layer.id='bamboo-particles';layer.setAttribute('aria-hidden','true');document.body.append(layer);
+
 for(let i=0;i<46;i++){
- const dot=document.createElement('i');dot.className='bamboo-particle';
- const rand=n=>((Math.sin(i*127.1+n*311.7)*43758.5453)%1+1)%1;
- dot.style.setProperty('--left',(rand(1)*100).toFixed(2)+'%');
- dot.style.setProperty('--size',(1.5+rand(2)*2.4).toFixed(1)+'px');
- dot.style.setProperty('--duration',(16+rand(3)*18).toFixed(1)+'s');
- dot.style.setProperty('--delay',(-rand(4)*34).toFixed(1)+'s');
- dot.style.setProperty('--drift',((rand(5)-.5)*100).toFixed(0)+'px');
- dot.style.setProperty('--opacity',(.18+rand(6)*.38).toFixed(2));layer.append(dot);
+
+ const dot=document.createElement('i');dot.className='bamboo-particle';
+
+ const rand=n=>((Math.sin(i*127.1+n*311.7)*43758.5453)%1+1)%1;
+
+ dot.style.setProperty('--left',(rand(1)*100).toFixed(2)+'%');
+
+ dot.style.setProperty('--size',(1.5+rand(2)*2.4).toFixed(1)+'px');
+
+ dot.style.setProperty('--duration',(16+rand(3)*18).toFixed(1)+'s');
+
+ dot.style.setProperty('--delay',(-rand(4)*34).toFixed(1)+'s');
+
+ dot.style.setProperty('--drift',((rand(5)-.5)*100).toFixed(0)+'px');
+
+ dot.style.setProperty('--opacity',(.18+rand(6)*.38).toFixed(2));layer.append(dot);
+
 }
+
 const links=[...document.querySelectorAll('a.nav-pill[href^="#"]')];
+
 const sections=links.map(a=>({a,section:document.querySelector(a.getAttribute('href'))})).filter(x=>x.section);
+
 function mark(){let active=sections[0];const probe=window.scrollY+window.innerHeight*.34;
- for(const item of sections){if(item.section.offsetTop<=probe)active=item}
- if(location.hash.startsWith('#wiki-'))active=sections.find(x=>x.section.id==='informacija')||active;
- for(const item of sections){const yes=item===active;item.a.classList.toggle('active',yes);if(yes)item.a.setAttribute('aria-current','page');else item.a.removeAttribute('aria-current')}
+
+ for(const item of sections){if(item.section.offsetTop<=probe)active=item}
+
+ if(location.hash.startsWith('#wiki-'))active=sections.find(x=>x.section.id==='informacija')||active;
+
+ for(const item of sections){const yes=item===active;item.a.classList.toggle('active',yes);if(yes)item.a.setAttribute('aria-current','page');else item.a.removeAttribute('aria-current')}
+
 }
+
 links.forEach(a=>a.addEventListener('click',()=>{links.forEach(x=>x.classList.toggle('active',x===a));setTimeout(mark,650)}));
+
 addEventListener('scroll',mark,{passive:true});addEventListener('resize',mark);addEventListener('hashchange',mark);setTimeout(mark,100);
+
 })();
+
 </script><style id="bambukas-music-style">
-.music-toggle{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:9px;border:1px solid rgba(140,255,155,.4);border-radius:999px;padding:12px 17px;background:rgba(9,31,19,.94);color:#eaffea;font:600 13px system-ui,sans-serif;box-shadow:0 8px 30px #0008;cursor:pointer}
-.music-toggle:hover{border-color:#a0ffac}.music-panel{position:fixed;right:18px;bottom:75px;z-index:9999;width:min(290px,calc(100vw - 36px));padding:13px;border:1px solid rgba(140,255,155,.35);border-radius:18px;background:rgba(8,27,17,.97);box-shadow:0 16px 45px #000a;color:#eaffea;font:13px system-ui,sans-serif}.music-panel[hidden]{display:none}.music-panel strong{display:block;margin-bottom:10px;color:#b8ffbc}.music-panel iframe{width:100%;height:205px;border:0;border-radius:10px;background:#0a1a10}.music-volume{display:flex;align-items:center;gap:10px;margin-top:10px}.music-volume input{flex:1;accent-color:#7be88d}.music-hint{color:#b6cdb9;font-size:11px;line-height:1.4;margin-top:8px}
+.music-toggle{position:fixed;right:22px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:10px;padding:12px 19px;border:1px solid #a4ff8570;border-radius:999px;background:linear-gradient(125deg,#183f2a,#0b2118);color:#f1fff0;font:800 13px Outfit,Arial,sans-serif;box-shadow:0 12px 38px #0009,0 0 22px #7cff4520;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
+.music-toggle:hover{transform:translateY(-3px);border-color:#9dff75;box-shadow:0 16px 38px #000a,0 0 25px #8cff5533}.music-toggle .toggle-icon{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#8cff55;color:#0a2512;font-size:15px}.music-toggle[aria-expanded="true"] .toggle-icon{box-shadow:0 0 0 5px #8cff5520}
+.music-panel{position:fixed;right:20px;bottom:88px;z-index:9999;width:min(385px,calc(100vw - 32px));max-height:min(78vh,650px);overflow-y:auto;padding:0;border:1px solid #92ff7466;border-radius:23px;background:linear-gradient(155deg,#183b28fa 0%,#0b2017fb 55%,#07180ffb 100%);box-shadow:0 26px 70px #000d,0 0 40px #62ff2510;color:#eaffea;font:13px Outfit,Arial,sans-serif;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);animation:music-rise .23s ease-out}.music-panel[hidden]{display:none}@keyframes music-rise{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.music-panel:before{content:"";position:absolute;top:0;left:23px;right:23px;height:2px;background:linear-gradient(90deg,transparent,#8cff55,transparent)}.music-inner{padding:22px}.music-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}.music-logo{width:47px;height:47px;display:grid;place-items:center;border:1px solid #aaff8566;border-radius:15px;background:linear-gradient(135deg,#8cff5530,#67ff4510);font-size:24px;box-shadow:inset 0 1px #ffffff15}.music-heading{flex:1;min-width:0}.music-panel h3{margin:0 0 4px;font-size:19px;letter-spacing:-.4px;color:#c5ffb3;font-weight:900}.music-subtitle{color:#9db9a4;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}.music-close{width:31px;height:31px;display:grid;place-items:center;border:1px solid #ffffff25;border-radius:10px;background:#ffffff0a;color:#c7dfc9;font-size:19px;cursor:pointer}.music-close:hover{background:#ffffff20;color:#fff}.music-panel .music-description{margin:0 0 18px;color:#bed5c0;font-size:13px;line-height:1.55}.music-panel label{display:block;margin:0 0 8px;color:#e4ffe0;font-size:12px;font-weight:800}.music-input-row{display:flex;gap:8px;margin-bottom:13px}.music-url{flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:0 12px;border:1px solid #527b5b;border-radius:12px;background:#07180f;transition:border-color .2s,box-shadow .2s}.music-url:focus-within{border-color:#9aff7b;box-shadow:0 0 0 3px #8cff5519}.music-url svg{flex:none;color:#a2cba7}.music-url input{width:100%;min-width:0;padding:13px 0;border:0;outline:0;background:transparent;color:#fff;font:inherit}.music-url input::placeholder{color:#7e9b85}.music-load{padding:0 16px;border:0;border-radius:12px;background:linear-gradient(135deg,#a7ff69,#7fe949);color:#0d2910;font-weight:900;cursor:pointer;box-shadow:0 4px 16px #8cff5522}.music-load:hover{filter:brightness(1.08)}.music-controls{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0 0 17px}.music-controls button{min-height:43px;display:flex;justify-content:center;align-items:center;gap:9px;border:1px solid #5c8665;border-radius:12px;background:linear-gradient(145deg,#244c33,#193826);color:#efffee;font-weight:800;cursor:pointer;transition:transform .2s,border-color .2s,background .2s}.music-controls button:not(:disabled):hover{transform:translateY(-2px);border-color:#a4ff86;background:#315b3c}.music-controls button:disabled{opacity:.48;cursor:not-allowed}.music-controls svg{width:16px;height:16px}.music-volume-box{padding:13px 14px;border:1px solid #365f40;border-radius:13px;background:#ffffff07}.music-volume{display:flex!important;align-items:center;gap:11px!important;margin:0!important}.music-volume .volume-caption{display:flex;align-items:center;gap:7px;white-space:nowrap;font-weight:800}.music-volume input{flex:1;min-width:0;accent-color:#8cff55;cursor:pointer}.music-volume output{min-width:37px;text-align:right;color:#b6ff95;font-weight:900;font-variant-numeric:tabular-nums}.music-video{margin-top:14px;aspect-ratio:16/9;border:1px solid #426c4b;border-radius:13px;overflow:hidden;background:#06140b}.music-video iframe{width:100%;height:100%;border:0}.music-video[hidden]{display:none}.music-message{display:flex;align-items:flex-start;gap:7px;color:#a9c7ad!important;font-size:11px!important;line-height:1.5;margin:13px 0 0!important;min-height:17px}.music-message:before{content:"✦";color:#8cff55}.music-message.error{color:#ffc2a8!important}.music-message.error:before{color:#ffc2a8}.music-footer{margin-top:15px;padding-top:12px;border-top:1px solid #ffffff15;display:flex;align-items:center;justify-content:space-between;gap:8px;color:#829e89;font-size:10px}.music-footer strong{color:#a8ed9c;font-weight:800}
+@media(max-width:480px){.music-toggle{right:12px;bottom:12px}.music-panel{right:12px;bottom:76px;width:calc(100vw - 24px)}.music-inner{padding:17px}.music-panel h3{font-size:17px}}@media(prefers-reduced-motion:reduce){.music-panel{animation:none}.music-toggle,.music-controls button{transition:none}}
 </style>
-<button id="musicToggle" class="music-toggle" type="button" aria-expanded="false" aria-controls="musicPanel">♫ Muzika</button>
-<div id="musicPanel" class="music-panel" hidden>
-<strong>🎵 Bambukas.lt • Rami muzika</strong>
-<div id="youtubePlayer"><iframe title="Bambukas.lt muzika iš YouTube" src="https://www.youtube.com/embed/fiore9Z5iUg?enablejsapi=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-<label class="music-volume">🔉 Garsas <input id="musicVolume" type="range" min="0" max="40" value="8" aria-label="Muzikos garsumas"></label>
-<div class="music-hint">Paspausk ▶ vaizdo grotuve. Pradinis garsumas – 8 %. Muzika lieka groti naršant šio puslapio skiltis.</div>
-</div>
+<button id="musicToggle" class="music-toggle" type="button" aria-expanded="false" aria-controls="musicPanel"><span class="toggle-icon" aria-hidden="true">♫</span> Mano muzika</button>
+<section id="musicPanel" class="music-panel" hidden aria-label="Asmeninis muzikos grotuvas">
+<div class="music-inner">
+<div class="music-head"><span class="music-logo" aria-hidden="true">🎧</span><div class="music-heading"><h3>Bambukas Music</h3><div class="music-subtitle">Tavo garsas · Tavo pasaulis</div></div><button class="music-close" id="musicClose" type="button" aria-label="Uždaryti muzikos langą">×</button></div>
+<p class="music-description">Įklijuok YouTube, YouTube Music, Spotify arba SoundCloud nuorodą. 🌿</p>
+<label for="musicUrl">🎵 Muzikos nuoroda</label>
+<div class="music-input-row"><div class="music-url"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.7 1.7M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7"/></svg><input id="musicUrl" type="url" placeholder="YouTube, Spotify, SoundCloud..." autocomplete="off"></div><button id="musicLoad" class="music-load" type="button">Įkelti</button></div>
+<div class="music-controls"><button id="musicPlay" type="button" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Groti</button><button id="musicPause" type="button" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg> Pauzė</button></div>
+<div class="music-volume-box"><label class="music-volume" for="musicVolume"><span class="volume-caption">🔉 Garsas</span><input id="musicVolume" type="range" min="0" max="100" value="12"><output id="musicVolumeValue">12 %</output></label></div>
+<div class="music-video" id="musicVideo" hidden><div id="musicYoutubePlayer"></div></div>
+<p class="music-message" id="musicMessage" role="status">Muzika paleidžiama tik tavo pasirinkimu.</p>
+<div class="music-footer"><span>🌿 <strong>BAMBUKAS.LT</strong> MUSIC</span><span>YouTube · Spotify · SoundCloud</span></div>
+</div></section>
 <script id="bambukas-music-js">
-(()=>{
-const btn=document.getElementById('musicToggle'),panel=document.getElementById('musicPanel'),volume=document.getElementById('musicVolume');
-let player=null,ready=false;
-btn.addEventListener('click',()=>{panel.hidden=!panel.hidden;btn.setAttribute('aria-expanded',String(!panel.hidden));});
-window.onYouTubeIframeAPIReady=()=>{
-  player=new YT.Player(document.querySelector('#youtubePlayer iframe'),{
-    events:{onReady:()=>{ready=true;player.setVolume(Number(volume.value));}}
-  });
-};
-volume.addEventListener('input',()=>{if(ready)player.setVolume(Number(volume.value));});
-const script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';document.head.appendChild(script);
+(()=>{'use strict';
+const $=id=>document.getElementById(id),toggle=$('musicToggle'),panel=$('musicPanel'),url=$('musicUrl'),load=$('musicLoad'),play=$('musicPlay'),pause=$('musicPause'),vol=$('musicVolume'),volValue=$('musicVolumeValue'),video=$('musicVideo'),message=$('musicMessage');
+let player=null,apiReady=false,playerReady=false,pending=null,mode=null;
+function say(t,error=false){message.textContent=t;message.classList.toggle('error',error)}
+function parse(raw){
+ try{
+  const u=new URL(raw.trim());if(!['https:','http:'].includes(u.protocol))return null;
+  const host=u.hostname.toLowerCase().replace(/^(www\.|m\.|music\.)/,'');
+  if(host==='youtu.be'||host==='youtube.com'||host==='youtube-nocookie.com'){
+   let id='';if(host==='youtu.be')id=u.pathname.split('/')[1]||'';
+   else if(u.pathname==='/watch')id=u.searchParams.get('v')||'';
+   else if(/^\/(shorts|embed|live)\//.test(u.pathname))id=u.pathname.split('/')[2]||'';
+   const list=u.searchParams.get('list')||'';
+   if(/^[\w-]{11}$/.test(id))return {type:'youtube',id};
+   if(/^[\w-]{10,}$/.test(list))return {type:'playlist',id:list};
+  }
+  if(host==='open.spotify.com'){
+   const m=u.pathname.match(/^\/(?:intl-[a-z-]+\/)?(track|album|playlist|episode|show)\/([A-Za-z0-9]+)\/?$/);
+   if(m)return {type:'embed',service:'Spotify',src:'https://open.spotify.com/embed/'+m[1]+'/'+m[2]};
+  }
+  if(host==='soundcloud.com' && u.pathname.split('/').filter(Boolean).length>=2){
+   return {type:'embed',service:'SoundCloud',src:'https://w.soundcloud.com/player/?url='+encodeURIComponent('https://soundcloud.com'+u.pathname)+'&auto_play=false&hide_related=true&show_comments=false'};
+  }
+ }catch(e){}return null;
+}
+function buttons(enabled){play.disabled=!enabled;pause.disabled=!enabled}
+function clear(){playerReady=false;buttons(false);if(player){try{player.destroy()}catch(e){}player=null}video.replaceChildren();video.hidden=false}
+function youtube(item){
+ if(!apiReady){say('Kraunamas YouTube grotuvas...');return}
+ const holder=document.createElement('div');holder.id='musicYoutubePlayer';video.append(holder);
+ const vars={playsinline:1,rel:0};if(location.protocol.startsWith('http'))vars.origin=location.origin;
+ if(item.type==='playlist')vars.listType='playlist',vars.list=item.id;
+ player=new YT.Player('musicYoutubePlayer',{height:'190',width:'320',videoId:item.type==='youtube'?item.id:undefined,playerVars:vars,
+ events:{onReady:e=>{playerReady=true;buttons(true);e.target.setVolume(Number(vol.value));say('Paruošta! Paspausk ▶ Groti.')},onError:()=>say('Šio įrašo nepavyko paleisti: galbūt autorius neleidžia jo įterpti.',true)}});
+}
+function loadLink(){
+ const item=parse(url.value);if(!item){say('Netinkama nuoroda. Naudok YouTube, YouTube Music, Spotify arba SoundCloud.',true);return}
+ pending=item;mode=item.type;clear();
+ if(item.type==='embed'){
+  const frame=document.createElement('iframe');frame.src=item.src;frame.title=item.service+' muzikos grotuvas';frame.loading='lazy';frame.allow='autoplay; encrypted-media; clipboard-write';frame.referrerPolicy='strict-origin-when-cross-origin';frame.style.cssText='width:100%;height:190px;border:0;border-radius:12px';video.append(frame);
+  say('Paleisk muziką '+item.service+' grotuve. Garsą ir pauzę valdyk jame.');
+ }else youtube(item);
+}
+window.onYouTubeIframeAPIReady=()=>{apiReady=true;if(pending&&pending.type!=='embed'&&!player)youtube(pending)};
+const script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';script.onerror=()=>say('Nepavyko įkelti YouTube grotuvo. Patikrink interneto ryšį.',true);document.head.append(script);
+toggle.addEventListener('click',()=>{panel.hidden=!panel.hidden;toggle.setAttribute('aria-expanded',String(!panel.hidden))});
+$('musicClose').addEventListener('click',()=>{panel.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.focus()});
+load.addEventListener('click',loadLink);url.addEventListener('keydown',e=>{if(e.key==='Enter')loadLink()});
+play.addEventListener('click',()=>{if(playerReady){player.playVideo();say('Muzika groja. Uždarius langelį grojimas tęsis.')}});
+pause.addEventListener('click',()=>{if(playerReady){player.pauseVideo();say('Muzika pristabdyta.')}});
+vol.addEventListener('input',()=>{volValue.textContent=vol.value+' %';if(playerReady)player.setVolume(Number(vol.value))});
 })();
-</script></body></html>
+</script>
+</body></html>
