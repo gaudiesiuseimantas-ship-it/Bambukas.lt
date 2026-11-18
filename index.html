@@ -169,4 +169,28 @@ function mark(){let active=sections[0];const probe=window.scrollY+window.innerHe
 links.forEach(a=>a.addEventListener('click',()=>{links.forEach(x=>x.classList.toggle('active',x===a));setTimeout(mark,650)}));
 addEventListener('scroll',mark,{passive:true});addEventListener('resize',mark);addEventListener('hashchange',mark);setTimeout(mark,100);
 })();
+</script><style id="bambukas-music-style">
+.music-toggle{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:9px;border:1px solid rgba(140,255,155,.4);border-radius:999px;padding:12px 17px;background:rgba(9,31,19,.94);color:#eaffea;font:600 13px system-ui,sans-serif;box-shadow:0 8px 30px #0008;cursor:pointer}
+.music-toggle:hover{border-color:#a0ffac}.music-panel{position:fixed;right:18px;bottom:75px;z-index:9999;width:min(290px,calc(100vw - 36px));padding:13px;border:1px solid rgba(140,255,155,.35);border-radius:18px;background:rgba(8,27,17,.97);box-shadow:0 16px 45px #000a;color:#eaffea;font:13px system-ui,sans-serif}.music-panel[hidden]{display:none}.music-panel strong{display:block;margin-bottom:10px;color:#b8ffbc}.music-panel iframe{width:100%;height:205px;border:0;border-radius:10px;background:#0a1a10}.music-volume{display:flex;align-items:center;gap:10px;margin-top:10px}.music-volume input{flex:1;accent-color:#7be88d}.music-hint{color:#b6cdb9;font-size:11px;line-height:1.4;margin-top:8px}
+</style>
+<button id="musicToggle" class="music-toggle" type="button" aria-expanded="false" aria-controls="musicPanel">♫ Muzika</button>
+<div id="musicPanel" class="music-panel" hidden>
+<strong>🎵 Bambukas.lt • Rami muzika</strong>
+<div id="youtubePlayer"><iframe title="Bambukas.lt muzika iš YouTube" src="https://www.youtube.com/embed/fiore9Z5iUg?enablejsapi=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+<label class="music-volume">🔉 Garsas <input id="musicVolume" type="range" min="0" max="40" value="8" aria-label="Muzikos garsumas"></label>
+<div class="music-hint">Paspausk ▶ vaizdo grotuve. Pradinis garsumas – 8 %. Muzika lieka groti naršant šio puslapio skiltis.</div>
+</div>
+<script id="bambukas-music-js">
+(()=>{
+const btn=document.getElementById('musicToggle'),panel=document.getElementById('musicPanel'),volume=document.getElementById('musicVolume');
+let player=null,ready=false;
+btn.addEventListener('click',()=>{panel.hidden=!panel.hidden;btn.setAttribute('aria-expanded',String(!panel.hidden));});
+window.onYouTubeIframeAPIReady=()=>{
+  player=new YT.Player(document.querySelector('#youtubePlayer iframe'),{
+    events:{onReady:()=>{ready=true;player.setVolume(Number(volume.value));}}
+  });
+};
+volume.addEventListener('input',()=>{if(ready)player.setVolume(Number(volume.value));});
+const script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';document.head.appendChild(script);
+})();
 </script></body></html>
