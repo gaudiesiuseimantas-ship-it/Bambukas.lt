@@ -38,6 +38,14 @@
 @media(max-width:950px){nav{height:auto;min-height:78px;padding:10px 0;flex-wrap:wrap}.links{order:3;width:100%;justify-content:center}.nav-ip{margin-left:auto}}
 @media(max-width:760px){.links a:nth-child(2),.links a:nth-child(3){display:inline-flex}.links{gap:6px}.links .nav-pill,.links .wiki-nav-link{font-size:11px;padding:9px 10px}.nav-icon{width:14px;height:14px}.brand img{width:160px}.nav-ip{font-size:11px;padding:9px}}
 @media(max-width:390px){.links .nav-pill,.links .wiki-nav-link{font-size:10px;padding:8px 7px}}
+
+/* Serverio IP mygtukas: atskiros eilutes ir tvarkingas isdestymas */
+header .nav-ip{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;min-height:54px;padding:8px 13px}
+header .nav-ip .nav-ip-icon{display:grid;place-items:center;flex:0 0 32px}
+header .nav-ip .nav-ip-text{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center;gap:3px;min-width:0;line-height:1.1}
+header .nav-ip .nav-ip-label{display:block!important;font-size:10px!important;line-height:1.1;color:#a9f49a;letter-spacing:.8px}
+header .nav-ip .nav-ip-address{display:block!important;font-size:13px!important;line-height:1.2;color:#fff;letter-spacing:0}
+header .nav-ip .nav-ip-arrow{flex-shrink:0}
 </style></head>
 
 <body>
@@ -62,7 +70,7 @@
 
 <script>
 
-(()=>{'use strict';const journey=document.querySelector('.journey'),stage=document.querySelector('#stage'),hero=document.querySelector('#heroText');let ticking=false;const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));function update(){ticking=false;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const rect=journey.getBoundingClientRect();const travel=Math.max(1,journey.offsetHeight-innerHeight);const p=clamp(-rect.top/travel,0,1);/* Zoom toward bamboo forest depth, slightly right of center */const ease=p*p*(3-2*p);const zoom=1+1.35*ease;const fade=1-clamp((p-.13)/.37,0,1);const shade=.03+.97*clamp((p-.29)/.61,0,1);stage.style.setProperty('--progress',p.toFixed(4));stage.style.setProperty('--zoom',zoom.toFixed(4));stage.style.setProperty('--fade',fade.toFixed(4));stage.style.setProperty('--shade',shade.toFixed(4));hero.style.pointerEvents=fade<.1?'none':'auto'}function schedule(){if(!ticking){ticking=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);update();document.querySelector('#year').textContent=new Date().getFullYear();document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('play.bambukas.net');const old=b.textContent;b.textContent='✓ IP nukopijuotas!';setTimeout(()=>b.textContent=old,1800)}catch{prompt('Nukopijuok serverio IP:','play.bambukas.net')}}));})();
+(()=>{'use strict';const journey=document.querySelector('.journey'),stage=document.querySelector('#stage'),hero=document.querySelector('#heroText');let ticking=false;const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));function update(){ticking=false;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const rect=journey.getBoundingClientRect();const travel=Math.max(1,journey.offsetHeight-innerHeight);const p=clamp(-rect.top/travel,0,1);/* Zoom toward bamboo forest depth, slightly right of center */const ease=p*p*(3-2*p);const zoom=1+1.35*ease;const fade=1-clamp((p-.13)/.37,0,1);const shade=.03+.97*clamp((p-.29)/.61,0,1);stage.style.setProperty('--progress',p.toFixed(4));stage.style.setProperty('--zoom',zoom.toFixed(4));stage.style.setProperty('--fade',fade.toFixed(4));stage.style.setProperty('--shade',shade.toFixed(4));hero.style.pointerEvents=fade<.1?'none':'auto'}function schedule(){if(!ticking){ticking=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);update();document.querySelector('#year').textContent=new Date().getFullYear();document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('play.bambukas.net');const old=b.innerHTML;b.textContent='✓ IP nukopijuotas!';setTimeout(()=>b.innerHTML=old,1800)}catch{prompt('Nukopijuok serverio IP:','play.bambukas.net')}}));})();
 
 </script><script>
 
