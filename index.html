@@ -47,6 +47,12 @@ header .nav-ip .nav-ip-label{display:block!important;font-size:10px!important;li
 header .nav-ip .nav-ip-address{display:block!important;font-size:13px!important;line-height:1.2;color:#fff;letter-spacing:0}
 header .nav-ip .nav-ip-arrow{flex-shrink:0}
 .hero-copy .hero-tagline{display:block;margin-top:12px;color:#9cff68;font-weight:800;letter-spacing:.015em}.hero-copy p strong{color:#fff;font-weight:800}
+
+/* Bambukas: subtle floating green forest particles */
+.forest-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;opacity:calc(1 - var(--progress)*.82)}
+.forest-particle{position:absolute;top:-12px;left:var(--x);width:var(--size);height:var(--size);border-radius:50%;background:#a6ff78;opacity:0;box-shadow:0 0 7px 1px rgba(135,255,89,.45);animation:forest-fall var(--duration) linear infinite;animation-delay:var(--delay)}
+@keyframes forest-fall{0%{transform:translate3d(0,-15px,0);opacity:0}12%{opacity:var(--opacity)}85%{opacity:var(--opacity)}100%{transform:translate3d(var(--drift),105vh,0);opacity:0}}
+@media(prefers-reduced-motion:reduce){.forest-particles{display:none}}
 </style><style>
 /* Tvarkingas patvirtinimas nukopijavus IP */
 [data-copy].copy-success{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;min-width:max-content;white-space:nowrap;background:linear-gradient(135deg,#1b492d,#102c20)!important;border:1px solid #91ff6d!important;color:#fff!important;box-shadow:0 0 0 3px rgba(119,255,91,.09),0 10px 26px rgba(0,0,0,.22)!important;animation:copyPop .25s ease-out}
@@ -79,7 +85,7 @@ header .nav-ip .nav-ip-arrow{flex-shrink:0}
 
 <main>
 
-<section class="journey" id="pradzia" aria-label="Bambukas.lt įžanga"><div class="stage" id="stage"><div class="forest" aria-hidden="true"></div><div class="darkness" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="hero-content container" id="heroText"><div class="hero-copy"><div class="eyebrow"> » TAVO UNIKALI MINECRAFT PATIRTIS «</div><h1 class="pixel hero-heading"><img class="hero-panda" src="panda-bambukas.png" alt="Bambukas.lt panda su bambuku"><span class="hero-title">BAMBUKAS<span class="title-lt">.LT</span></span></h1><p>Ženk į <strong>Bambukas Network</strong> pasaulį, kuriame tavęs laukia įspūdingi nuotykiai, paslaptingi atradimai ir nauji iššūkiai. Kurk, tyrinėk, varžykis ir atrask savo vietą mūsų bendruomenėje.<span class="hero-tagline">Tavo pasaulis. Tavo nuotykis. Tavo istorija.</span></p><div class="actions"><button class="btn btn-primary hero-glass" data-copy aria-label="Kopijuoti serverio IP"><span class="glass-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span><span class="glass-label"><strong>Kopijuoti IP</strong></span><span class="glass-arrow" aria-hidden="true">→</span></button><a class="btn btn-ghost discord-btn hero-glass" href="#" onclick="alert('Discord nuoroda bus pridėta netrukus!'); return false;" aria-label="Prisijungti prie Discord"><span class="glass-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.95L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5Z"/></svg></span><span class="glass-label"><strong>Prisijungti prie Discord</strong></span><span class="glass-arrow" aria-hidden="true">↗</span></a></div></div></div><div class="hint" aria-hidden="true">Slink žemyn ir keliauk į mišką <span>↓</span></div></div></section>
+<section class="journey" id="pradzia" aria-label="Bambukas.lt įžanga"><div class="stage" id="stage"><div class="forest" aria-hidden="true"></div><div class="darkness" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="forest-particles" id="forestParticles" aria-hidden="true"></div><div class="hero-content container" id="heroText"><div class="hero-copy"><div class="eyebrow"> » TAVO UNIKALI MINECRAFT PATIRTIS «</div><h1 class="pixel hero-heading"><img class="hero-panda" src="panda-bambukas.png" alt="Bambukas.lt panda su bambuku"><span class="hero-title">BAMBUKAS<span class="title-lt">.LT</span></span></h1><p>Ženk į <strong>Bambukas Network</strong> pasaulį, kuriame tavęs laukia įspūdingi nuotykiai, paslaptingi atradimai ir nauji iššūkiai. Kurk, tyrinėk, varžykis ir atrask savo vietą mūsų bendruomenėje.<span class="hero-tagline">Tavo pasaulis. Tavo nuotykis. Tavo istorija.</span></p><div class="actions"><button class="btn btn-primary hero-glass" data-copy aria-label="Kopijuoti serverio IP"><span class="glass-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span><span class="glass-label"><strong>Kopijuoti IP</strong></span><span class="glass-arrow" aria-hidden="true">→</span></button><a class="btn btn-ghost discord-btn hero-glass" href="#" onclick="alert('Discord nuoroda bus pridėta netrukus!'); return false;" aria-label="Prisijungti prie Discord"><span class="glass-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.95L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5Z"/></svg></span><span class="glass-label"><strong>Prisijungti prie Discord</strong></span><span class="glass-arrow" aria-hidden="true">↗</span></a></div></div></div><div class="hint" aria-hidden="true">Slink žemyn ir keliauk į mišką <span>↓</span></div></div></section>
 
 <section class="info" id="informacija"><div class="container">
 
@@ -139,4 +145,48 @@ search.addEventListener('input',()=>renderNav(search.value.trim().toLocaleLowerC
 
 })();
 
-</script></body></html>
+</script>
+<script>
+/* Slow green particles and section-aware navigation */
+(()=>{
+  const layer=document.getElementById('forestParticles');
+  if(layer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const fragment=document.createDocumentFragment();
+    for(let i=0;i<38;i++){
+      const dot=document.createElement('i');dot.className='forest-particle';
+      const rand=(min,max)=>min+Math.random()*(max-min);
+      dot.style.setProperty('--x',rand(1,99).toFixed(1)+'%');
+      dot.style.setProperty('--size',rand(1.5,3.4).toFixed(1)+'px');
+      dot.style.setProperty('--duration',rand(14,28).toFixed(1)+'s');
+      dot.style.setProperty('--delay',(-rand(0,28)).toFixed(1)+'s');
+      dot.style.setProperty('--opacity',rand(.22,.60).toFixed(2));
+      dot.style.setProperty('--drift',rand(-75,75).toFixed(0)+'px');
+      fragment.appendChild(dot);
+    }
+    layer.appendChild(fragment);
+  }
+  const ids=['pradzia','informacija','bendruomene'];
+  const navLinks=[...document.querySelectorAll('.links .nav-pill[href^="#"]')];
+  function setActive(id){
+    navLinks.forEach(link=>{
+      const active=link.getAttribute('href')==='#'+id;
+      link.classList.toggle('active',active);
+      if(active)link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  function syncNav(){
+    const marker=window.scrollY+Math.min(window.innerHeight*.45,340);
+    let current='pradzia';
+    for(const id of ids){const section=document.getElementById(id);if(section&&section.offsetTop<=marker)current=id;}
+    setActive(current);
+  }
+  let pending=false;
+  window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(()=>{pending=false;syncNav()})}},{passive:true});
+  window.addEventListener('resize',syncNav);
+  navLinks.forEach(link=>link.addEventListener('click',()=>setActive(link.getAttribute('href').slice(1))));
+  window.addEventListener('load',syncNav);
+  syncNav();
+})();
+</script>
+</body></html>
